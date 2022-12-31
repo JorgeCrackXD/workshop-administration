@@ -1,0 +1,35 @@
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Administracion de Taller.exe
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Administracion de Taller.dll.config
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Administracion de Taller.deps.json
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Administracion de Taller.runtimeconfig.json
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Administracion de Taller.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Administracion de Taller.pdb
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Google.Protobuf.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\K4os.Compression.LZ4.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\K4os.Hash.xxHash.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\MySql.Data.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\ZstdNet.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\MySqlConnector.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.csproj.AssemblyReference.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.Form1.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.FormClientes.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.Properties.Resources.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.csproj.GenerateResource.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.AssemblyInfoInputs.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.AssemblyInfo.cs
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.csproj.CoreCompileInputs.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.csproj.CopyComplete
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\refint\Administracion de Taller.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.pdb
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.genruntimeconfig.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\ref\Administracion de Taller.dll
