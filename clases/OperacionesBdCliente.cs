@@ -146,5 +146,26 @@ namespace Administracion_de_Taller.clases
 
             return Convert.ToInt32(clienteRegistradoId);
         }
+
+        public Boolean actualizarCliente(Cliente cliente)
+        {
+            clases.Conexion conexionBd = new clases.Conexion();
+            MySqlConnection conexion = conexionBd.establecerConexion();
+
+            String query = $"UPDATE cliente SET aparatosEnTaller={cliente.AparatosEnTaller} WHERE id = {cliente.Id}";
+
+            try
+            {
+                MySqlCommand dbcmd = conexion.CreateCommand();
+                dbcmd.CommandText = query;
+                dbcmd.ExecuteNonQuery();
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return true;
+        }
     }
 }

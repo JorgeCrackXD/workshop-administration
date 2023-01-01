@@ -22,9 +22,15 @@ namespace Administracion_de_Taller
 
         private String path;
 
-        private String nombreClienteString;
+        private int idCliente;
 
         System.Windows.Forms.Form formClientes = System.Windows.Forms.Application.OpenForms["FormClientes"];
+
+        private OperacionesBdImagenAparato operacionesBdImagenAparato = new OperacionesBdImagenAparato();
+
+        private OperacionesBdAparato operacionesBdAparato = new OperacionesBdAparato();
+
+        private OperacionesBdCliente operacionesBdCliente = new OperacionesBdCliente(); 
 
         public GuardarAparatoCliente()
         {
@@ -72,48 +78,38 @@ namespace Administracion_de_Taller
             CloudinaryImpl cloudinary = new CloudinaryImpl();
             ImageUploadResult imagenSubida = cloudinary.cloudinarySave(path);
 
-            String idCloudinary = imagenSubida.PublicId.ToString();
-            String linkCloudinary = imagenSubida.Url.ToString();
 
-            //Establecer conexion a la BD
-            clases.Conexion conexionBd = new clases.Conexion();
-            MySqlConnection conexion = conexionBd.establecerConexion();
+            String tipo = "";
+            this.Invoke((MethodInvoker)delegate ()
+            {
+                tipo = comboBox1.SelectedItem.ToString();
+            });
 
-            MySqlDataReader reader = null;
-
-            String query = $"INSERT INTO imagen_aparato (idCloudinary, linkCloudinary, nombreCliente) VALUES ('{idCloudinary}', '{linkCloudinary}', '{nombreClienteString}')";
+            // Se crea el objeto de la imagen
+            ImagenAparato imagenAparato = new ImagenAparato(imagenSubida.PublicId.ToString(), imagenSubida.Uri.ToString(), idCliente);
+            // Se crea el objeto del aparato
+            Aparato aparato = new Aparato(tipo, textBox3.Text, textBox4.Text, this.control(), this.cable(), DateTime.Now.ToString("yyyy/MM/dd"), 0, imagenAparato.LinkCloudinary, idCliente);
 
             try
             {
-                MySqlCommand comando = new MySqlCommand(query, conexion);
-                reader = comando.ExecuteReader();
+                // Se hace el insert a la BD
+                operacionesBdImagenAparato.insertarImagenAparato(imagenAparato);
+
+                // Se hace el insert a la BD
+                operacionesBdAparato.insertarAparato(aparato);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            reader.Close();
-
-            String nombreCliente = nombreClienteString;
-            String tipo = "";
-            this.Invoke((MethodInvoker)delegate ()
-            {
-                 tipo = comboBox1.SelectedItem.ToString();
-            });
-            String marca = textBox3.Text;
-            String modelo = textBox4.Text;
-            int control = this.control();
-            int cable = this.cable();
-            int entregado = 0;
-            String fechaActual = DateTime.Now.ToString("yyyy/MM/dd");
-
-
-            String query2 = $"INSERT INTO aparato (tipo, marca, modelo, control, cable, entregado, linkCloudinary, nombreCliente, fechaIngreso) VALUES ('{tipo}', '{marca}', '{modelo}', '{control}', '{cable}', '{entregado}', '{linkCloudinary}', '{nombreCliente}', '{fechaActual}')";
+                
+            // En caso de que se haya guardado correctamente el aparato e imagen ( si es que hay ) se actualiza el usuario para añadirle 1 aparato.
             try
             {
-                MySqlCommand comando = new MySqlCommand(query2, conexion);
-                reader = comando.ExecuteReader();
+                Cliente clienteBd = operacionesBdCliente.obtenerUnClientePorId(idCliente);
+                clienteBd.AparatosEnTaller = clienteBd.AparatosEnTaller += 1;
+
+                operacionesBdCliente.actualizarCliente(clienteBd);
             }
             catch (Exception ex)
             {
@@ -127,7 +123,7 @@ namespace Administracion_de_Taller
 
             textBox1.Text = nombreCliente;
 
-            nombreClienteString = nombreCliente;
+            idCliente = Int32.Parse(((FormClientes)formClientes).labelIdCliente.Text);
         }
 
         private int cable()

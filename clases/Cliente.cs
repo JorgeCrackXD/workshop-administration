@@ -28,6 +28,12 @@ namespace Administracion_de_Taller.clases
         {
 
         }
+
+        public Cliente(int id, int aparatosEnTaller)
+        {
+            this.id = id;
+            this.aparatosEnTaller = aparatosEnTaller;
+        }
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Telefono { get => telefono; set => telefono = value; }
