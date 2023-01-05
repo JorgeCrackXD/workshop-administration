@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Administracion_de_Taller.clases
+namespace Administracion_de_Taller.Models
 {
     internal class Cliente
     {
         private int id;
-        private String nombre;
-        private String telefono;
-        private String direccion;
-        private String fechaRegistro;
+        private string nombre;
+        private string telefono;
+        private string direccion;
+        private string fechaRegistro;
         private int aparatosEnTaller;
 
         public Cliente(string nombre, string telefono, string direccion, string fechaRegistro, int aparatosEnTaller)

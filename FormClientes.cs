@@ -1,4 +1,5 @@
-﻿using Administracion_de_Taller.clases;
+﻿using Administracion_de_Taller.Models;
+using Administracion_de_Taller.Repository;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using System;
@@ -21,6 +22,8 @@ namespace Administracion_de_Taller
 
         public FormClienteBusqueda formClienteBusqueda;
 
+        public FormAparatos formAparatos;
+
         private OperacionesBdCliente operacionesCliente = new OperacionesBdCliente();
 
         public Form1 form1;
@@ -36,40 +39,23 @@ namespace Administracion_de_Taller
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
-            this.Hide();
-            this.Dispose(true);
-            GC.Collect();
+            volverFormularioInicio();
         }
 
         private void panel3_MouseClick(object sender, MouseEventArgs e)
         {
-            this.Hide();
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
-            this.Hide();
-            this.Dispose(true);
-            GC.Collect();
+            volverFormularioInicio();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Owner.Show();  //Show the previous form
-            Hide();
-
+            volverFormularioInicio();
         }
 
         private void FormClientes_Load(object sender, EventArgs e)
         {
             timer1.Start();
             llenarTabla();
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -183,15 +169,9 @@ namespace Administracion_de_Taller
             label4.Text = DateTime.Now.ToLongDateString();
         }
 
-        void formClienteBusqueda_FormClosed(object sender, FormClosedEventArgs e)
+        void formAparatos_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formClienteBusqueda = null;  //If form is closed make sure reference is set to null
-            Show();
-        }
-
-        void formGuardarAparatoCliente_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formGuardarAparatoCliente = null;  //If form is closed make sure reference is set to null
+            formAparatos = null;  //If form is closed make sure reference is set to null
             Show();
         }
 
@@ -265,6 +245,52 @@ namespace Administracion_de_Taller
             {
                 button2.Enabled = false;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            mostrarFormAparatos();
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            mostrarFormAparatos();
+
+        }
+
+        private void panel4_MouseClick(object sender, MouseEventArgs e)
+        {
+            mostrarFormAparatos();
+        }
+
+        private void mostrarFormAparatos()
+        {
+            if (formAparatos == null)
+            {
+                formAparatos = new FormAparatos();   //Create form if not created
+                formAparatos.FormClosed += formAparatos_FormClosed;  //Add eventhandler to cleanup after form closes
+            }
+            formAparatos.Show(this);  //Show Form assigning this form as the forms owner
+            Hide();
+        }
+
+        private void volverFormularioInicio()
+        {
+            Owner.Show();  //Show the previous form
+            Hide();
+        }
+
+        void formClienteBusqueda_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formClienteBusqueda = null;  //If form is closed make sure reference is set to null
+            Show();
+        }
+
+        void formGuardarAparatoCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formGuardarAparatoCliente = null;  //If form is closed make sure reference is set to null
+            Show();
         }
     }
 }

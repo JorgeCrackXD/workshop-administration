@@ -195,6 +195,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(236, 77);
             this.panel4.TabIndex = 4;
+            this.panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseClick);
             // 
             // label2
             // 
@@ -206,6 +207,7 @@
             this.label2.Size = new System.Drawing.Size(145, 33);
             this.label2.TabIndex = 3;
             this.label2.Text = "Aparatos";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox3
             // 
@@ -217,6 +219,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // panel3
             // 

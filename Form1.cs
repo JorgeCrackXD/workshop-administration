@@ -1,3 +1,4 @@
+using Administracion_de_Taller.Models;
 using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.X509;
@@ -12,6 +13,8 @@ namespace Administracion_de_Taller
     public partial class Form1 : Form
     {
         public FormClientes formClientes;
+
+        public FormAparatos formAparatos;
 
         public Form1()
         {
@@ -34,7 +37,7 @@ namespace Administracion_de_Taller
             timer1.Start();
 
             //Establecer conexion a la BD
-            clases.Conexion conexionBd = new clases.Conexion();
+            Conexion conexionBd = new Models.Conexion();
             MySqlConnection conexion = conexionBd.establecerConexion();
 
             MySqlDataReader reader = null;
@@ -65,15 +68,36 @@ namespace Administracion_de_Taller
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormClientes formClientes = new FormClientes();
-            formClientes.ShowDialog();
-            this.Close();
-            this.Dispose(true);
-
+            mostrarFormClientes();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            mostrarFormClientes();
+        }
+
+        private void panel3_MouseClick(object sender, MouseEventArgs e)
+        {
+            mostrarFormClientes();
+        }
+
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            mostrarFormAparatos();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            mostrarFormAparatos();
+        }
+
+        private void panel4_MouseClick(object sender, MouseEventArgs e)
+        {
+            mostrarFormAparatos();
+        }
+
+        private void mostrarFormClientes()
         {
             if (formClientes == null)
             {
@@ -82,24 +106,28 @@ namespace Administracion_de_Taller
             }
             formClientes.Show(this);  //Show Form assigning this form as the forms owner
             Hide();
-
-
         }
 
-        private void panel3_MouseClick(object sender, MouseEventArgs e)
+        private void mostrarFormAparatos()
         {
-            this.Hide();
-            FormClientes formClientes = new FormClientes();
-            formClientes.ShowDialog();
-            this.Close();
-            this.Dispose(true);
-
-
+            if (formAparatos == null)
+            {
+                formAparatos = new FormAparatos();   //Create form if not created
+                formAparatos.FormClosed += formAparatos_FormClosed;  //Add eventhandler to cleanup after form closes
+            }
+            formAparatos.Show(this);  //Show Form assigning this form as the forms owner
+            Hide();
         }
 
         void formClientes_FormClosed(object sender, FormClosedEventArgs e)
         {
             formClientes = null;  //If form is closed make sure reference is set to null
+            Show();
+        }
+
+        void formAparatos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formAparatos = null;  //If form is closed make sure reference is set to null
             Show();
         }
     }

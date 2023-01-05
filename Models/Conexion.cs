@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 
-namespace Administracion_de_Taller.clases
+namespace Administracion_de_Taller.Models
 {
     internal class Conexion
     {
@@ -19,7 +19,7 @@ namespace Administracion_de_Taller.clases
         static string port = "3306";
 
         string connectionString = "server=" + server + ";port=" + port + ";user id=" + user + ";password=" + password + ";database=" + database + ";";
-        
+
         public MySqlConnection establecerConexion()
         {
             try
@@ -27,7 +27,8 @@ namespace Administracion_de_Taller.clases
                 conexion.ConnectionString = connectionString;
                 conexion.Open();
 
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("No se pudo conectar a la base de datos");
             }

@@ -40,6 +40,7 @@
             this.direccionText = new System.Windows.Forms.Label();
             this.fechaRegistroText = new System.Windows.Forms.Label();
             this.aparatosTallerText = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label7
@@ -165,11 +166,24 @@
             this.aparatosTallerText.TabIndex = 18;
             this.aparatosTallerText.Text = "Lorem Ipsum";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(638, 420);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(272, 47);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Ver aparatos";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormClienteBusqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.aparatosTallerText);
             this.Controls.Add(this.fechaRegistroText);
             this.Controls.Add(this.direccionText);
@@ -206,5 +220,6 @@
         private Label direccionText;
         private Label fechaRegistroText;
         private Label aparatosTallerText;
+        private Button button2;
     }
 }

@@ -1,5 +1,4 @@
-﻿using Administracion_de_Taller.clases;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +13,8 @@ using MySql.Data.MySqlClient;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Image = System.Drawing.Image;
+using Administracion_de_Taller.Models;
+using Administracion_de_Taller.Repository;
 
 namespace Administracion_de_Taller
 {
@@ -71,13 +72,30 @@ namespace Administracion_de_Taller
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             MessageBox.Show("La imagen se ha subido con éxito");
+
+            DialogResult dialogResult = MessageBox.Show("Desea registrar un aparato más??", "Aparato nuevo para cliente", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+                GuardarAparatoCliente formGuardar = new GuardarAparatoCliente();
+                formGuardar.ShowDialog();
+            } else
+            {
+                FormClientes formClientes = new FormClientes();
+                this.Close();
+                formClientes.ShowDialog();
+            }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             CloudinaryImpl cloudinary = new CloudinaryImpl();
-            ImageUploadResult imagenSubida = cloudinary.cloudinarySave(path);
+            ImageUploadResult imagenSubida = null;
 
+            if (path != null)
+            {
+                imagenSubida = cloudinary.cloudinarySave(path);
+            }
 
             String tipo = "";
             this.Invoke((MethodInvoker)delegate ()
@@ -85,16 +103,26 @@ namespace Administracion_de_Taller
                 tipo = comboBox1.SelectedItem.ToString();
             });
 
-            // Se crea el objeto de la imagen
-            ImagenAparato imagenAparato = new ImagenAparato(imagenSubida.PublicId.ToString(), imagenSubida.Uri.ToString(), idCliente);
+            // Se crea el objeto de la imagen si es que existe una imagen
+            ImagenAparato imagenAparato = new ImagenAparato(null, null, 0);
+            if( path != null)
+            {
+                imagenAparato = new ImagenAparato(imagenSubida.PublicId.ToString(), imagenSubida.Uri.ToString(), idCliente);
+                imagenAparato.IdCloudinary = imagenSubida.PublicId.ToString();
+                imagenAparato.LinkCloudinary = imagenSubida.Uri.ToString();
+                imagenAparato.IdCliente = idCliente;
+
+            }
             // Se crea el objeto del aparato
             Aparato aparato = new Aparato(tipo, textBox3.Text, textBox4.Text, this.control(), this.cable(), DateTime.Now.ToString("yyyy/MM/dd"), 0, imagenAparato.LinkCloudinary, idCliente);
 
             try
             {
                 // Se hace el insert a la BD
-                operacionesBdImagenAparato.insertarImagenAparato(imagenAparato);
-
+                if(path != null)
+                {
+                    operacionesBdImagenAparato.insertarImagenAparato(imagenAparato);
+                }
                 // Se hace el insert a la BD
                 operacionesBdAparato.insertarAparato(aparato);
             }

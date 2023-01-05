@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CloudinaryDotNet.Actions;
 using CloudinaryDotNet;
 
-namespace Administracion_de_Taller.clases
+namespace Administracion_de_Taller.Models
 {
     internal class CloudinaryImpl
     {
@@ -15,14 +15,14 @@ namespace Administracion_de_Taller.clases
         public const string API_KEY = "821933176972937";
         public const string API_SECRET = "Y9rqijzlr-dSum3_j0pOomYT7OA";
 
-        public ImageUploadResult cloudinarySave(String path)
+        public ImageUploadResult cloudinarySave(string path)
         {
-            Account account= new Account(CLOUD_NAME, API_KEY, API_SECRET);
+            Account account = new Account(CLOUD_NAME, API_KEY, API_SECRET);
             cloudinary = new Cloudinary(account);
             return subirImagen(path);
         }
 
-        public ImageUploadResult subirImagen(String path)
+        public ImageUploadResult subirImagen(string path)
         {
             var uploadParams = new ImageUploadParams()
             {

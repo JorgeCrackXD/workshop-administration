@@ -41,3 +41,6 @@ C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\Mi
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormAparatos.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormAparatoBusqueda.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormDiagnosticarAparato.resources

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Administracion_de_Taller.clases
+namespace Administracion_de_Taller.Models
 {
     internal class Aparato
     {
@@ -38,7 +38,7 @@ namespace Administracion_de_Taller.clases
         }
 
         public Aparato()
-        { 
+        {
 
         }
 

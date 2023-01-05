@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Administracion_de_Taller.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,19 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Administracion_de_Taller.clases
+namespace Administracion_de_Taller.Repository
 {
     internal class OperacionesBdCliente
     {
 
         public Cliente obtenerUnClientePorId(int id)
         {
-            clases.Conexion conexionBd = new clases.Conexion();
+            Models.Conexion conexionBd = new Models.Conexion();
             MySqlConnection conexion = conexionBd.establecerConexion();
 
             MySqlDataReader reader = null;
 
-            String query = $"SELECT * FROM cliente WHERE id = {id}";
+            string query = $"SELECT * FROM cliente WHERE id = {id}";
 
             Cliente cliente = new Cliente();
             try
@@ -54,11 +55,11 @@ namespace Administracion_de_Taller.clases
         public List<Cliente> obtenerClientes()
         {
             //Establecer conexion a la BD
-            clases.Conexion conexionBd = new clases.Conexion();
+            Models.Conexion conexionBd = new Models.Conexion();
             MySqlConnection conexion = conexionBd.establecerConexion();
 
             MySqlDataReader reader = null;
-            String query = "SELECT * FROM cliente";
+            string query = "SELECT * FROM cliente";
 
             List<Cliente> clientes = new List<Cliente>();
             try
@@ -78,6 +79,7 @@ namespace Administracion_de_Taller.clases
                         cliente.Telefono = reader.GetString(2);
                         cliente.Direccion = reader.GetString(3);
                         cliente.FechaRegistro = reader.GetString(4);
+                        cliente.AparatosEnTaller = int.Parse(reader.GetString(5));
                         clientes.Add(cliente);
                     }
                 }
@@ -89,15 +91,15 @@ namespace Administracion_de_Taller.clases
             return clientes;
         }
 
-        public List<Cliente> obtenerClientesPorNombre(String nombre)
+        public List<Cliente> obtenerClientesPorNombre(string nombre)
         {
             //Establecer conexion a la BD
-            clases.Conexion conexionBd = new clases.Conexion();
+            Models.Conexion conexionBd = new Models.Conexion();
             MySqlConnection conexion = conexionBd.establecerConexion();
 
             MySqlDataReader reader = null;
 
-            String query = $"SELECT * FROM cliente WHERE nombre LIKE '%{nombre}%'";
+            string query = $"SELECT * FROM cliente WHERE nombre LIKE '%{nombre}%'";
 
             List<Cliente> clientes = new List<Cliente>();
 
@@ -117,9 +119,10 @@ namespace Administracion_de_Taller.clases
                         Cliente cliente = new Cliente();
                         cliente.Id = int.Parse(reader.GetString(0));
                         cliente.Nombre = reader.GetString(1);
-                        cliente.Telefono = reader.GetString(3);
-                        cliente.Direccion = reader.GetString(4);
-                        cliente.FechaRegistro = reader.GetString(5);
+                        cliente.Telefono = reader.GetString(2);
+                        cliente.Direccion = reader.GetString(3);
+                        cliente.FechaRegistro = reader.GetString(4);
+                        cliente.AparatosEnTaller = int.Parse(reader.GetString(5));
                         clientes.Add(cliente);
                     }
                 }
@@ -133,10 +136,10 @@ namespace Administracion_de_Taller.clases
 
         public int insertarCliente(Cliente cliente)
         {
-            clases.Conexion conexionBd = new clases.Conexion();
+            Models.Conexion conexionBd = new Models.Conexion();
             MySqlConnection conexion = conexionBd.establecerConexion();
 
-            String query = $"INSERT INTO cliente (nombre, telefono, direccion, fechaRegistro, aparatosEnTaller) VALUES ('{cliente.Nombre}', '{cliente.Telefono}', '{cliente.Direccion}', '{cliente.FechaRegistro}', {cliente.AparatosEnTaller})";
+            string query = $"INSERT INTO cliente (nombre, telefono, direccion, fechaRegistro, aparatosEnTaller) VALUES ('{cliente.Nombre}', '{cliente.Telefono}', '{cliente.Direccion}', '{cliente.FechaRegistro}', {cliente.AparatosEnTaller})";
 
             MySqlCommand dbcmd = conexion.CreateCommand();
             dbcmd.CommandText = query;
@@ -147,12 +150,12 @@ namespace Administracion_de_Taller.clases
             return Convert.ToInt32(clienteRegistradoId);
         }
 
-        public Boolean actualizarCliente(Cliente cliente)
+        public bool actualizarCliente(Cliente cliente)
         {
-            clases.Conexion conexionBd = new clases.Conexion();
+            Models.Conexion conexionBd = new Models.Conexion();
             MySqlConnection conexion = conexionBd.establecerConexion();
 
-            String query = $"UPDATE cliente SET aparatosEnTaller={cliente.AparatosEnTaller} WHERE id = {cliente.Id}";
+            string query = $"UPDATE cliente SET aparatosEnTaller={cliente.AparatosEnTaller} WHERE id = {cliente.Id}";
 
             try
             {
@@ -160,7 +163,8 @@ namespace Administracion_de_Taller.clases
                 dbcmd.CommandText = query;
                 dbcmd.ExecuteNonQuery();
 
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

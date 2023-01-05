@@ -1,4 +1,4 @@
-﻿using Administracion_de_Taller.clases;
+﻿using Administracion_de_Taller.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace Administracion_de_Taller
         private void mostrarCliente(int clienteId)
         {
             //Establecer conexion a la BD
-            clases.Conexion conexionBd = new clases.Conexion();
+            Conexion conexionBd = new Models.Conexion();
             MySqlConnection conexion = conexionBd.establecerConexion();
 
             MySqlDataReader reader = null;
@@ -91,6 +91,15 @@ namespace Administracion_de_Taller
             {
 
             }
+            if (Int32.Parse(aparatosTallerText.Text) > 0)
+            {
+                button2.Visible = true;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
