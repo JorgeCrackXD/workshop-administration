@@ -32,29 +32,16 @@ namespace Administracion_de_Taller
 
         public string nombreCliente;
 
+        System.Windows.Forms.Form formPrincipal = System.Windows.Forms.Application.OpenForms["form1"];
+
+
         public FormClientes()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            volverFormularioInicio();
-        }
-
-        private void panel3_MouseClick(object sender, MouseEventArgs e)
-        {
-            volverFormularioInicio();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            volverFormularioInicio();
-        }
-
         private void FormClientes_Load(object sender, EventArgs e)
         {
-            timer1.Start();
             llenarTabla();
         }
 
@@ -113,6 +100,9 @@ namespace Administracion_de_Taller
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns[5].HeaderText = "aparatos";
+
 
         }
 
@@ -129,13 +119,7 @@ namespace Administracion_de_Taller
                     idCliente = clientes[0].Id;
                     nombreCliente = clientes[0].Nombre;
                     labelIdCliente.Text = idCliente.ToString();
-                    if (formClienteBusqueda == null)
-                    {
-                        formClienteBusqueda = new FormClienteBusqueda();   //Create form if not created
-                        formClienteBusqueda.FormClosed += formClienteBusqueda_FormClosed;  //Add eventhandler to cleanup after form closes
-                    }
-                    formClienteBusqueda.Show(this);  //Show Form assigning this form as the forms owner
-                    Hide();
+                    openChildForm(new FormClienteBusqueda());
                 }
 
                 //Se llena la tabla con la informacion de los clientes
@@ -163,12 +147,6 @@ namespace Administracion_de_Taller
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            label3.Text = DateTime.Now.ToString("T");
-            label4.Text = DateTime.Now.ToLongDateString();
-        }
-
         void formAparatos_FormClosed(object sender, FormClosedEventArgs e)
         {
             formAparatos = null;  //If form is closed make sure reference is set to null
@@ -184,13 +162,7 @@ namespace Administracion_de_Taller
 
                 idCliente = id;
                 labelIdCliente.Text = idCliente.ToString();
-                if (formClienteBusqueda == null)
-                {
-                    formClienteBusqueda = new FormClienteBusqueda();   //Create form if not created
-                    formClienteBusqueda.FormClosed += formClienteBusqueda_FormClosed;  //Add eventhandler to cleanup after form closes
-                }
-                formClienteBusqueda.Show(this);  //Show Form assigning this form as the forms owner
-                Hide();
+                openChildForm(new FormClienteBusqueda());
             }
         }
 
@@ -247,39 +219,6 @@ namespace Administracion_de_Taller
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            mostrarFormAparatos();
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            mostrarFormAparatos();
-
-        }
-
-        private void panel4_MouseClick(object sender, MouseEventArgs e)
-        {
-            mostrarFormAparatos();
-        }
-
-        private void mostrarFormAparatos()
-        {
-            if (formAparatos == null)
-            {
-                formAparatos = new FormAparatos();   //Create form if not created
-                formAparatos.FormClosed += formAparatos_FormClosed;  //Add eventhandler to cleanup after form closes
-            }
-            formAparatos.Show(this);  //Show Form assigning this form as the forms owner
-            Hide();
-        }
-
-        private void volverFormularioInicio()
-        {
-            Owner.Show();  //Show the previous form
-            Hide();
-        }
 
         void formClienteBusqueda_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -291,6 +230,24 @@ namespace Administracion_de_Taller
         {
             formGuardarAparatoCliente = null;  //If form is closed make sure reference is set to null
             Show();
+        }
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            ((Form1)formPrincipal).panelForms.Controls.Add(childForm);
+            ((Form1)formPrincipal).panelForms.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }

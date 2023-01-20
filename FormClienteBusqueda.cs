@@ -1,4 +1,5 @@
 ﻿using Administracion_de_Taller.Models;
+using Administracion_de_Taller.Repository;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace Administracion_de_Taller
     {
 
         System.Windows.Forms.Form formClientes = System.Windows.Forms.Application.OpenForms["FormClientes"];
+
+        private OperacionesBdCliente operacionesCliente = new OperacionesBdCliente();
 
         public FormClienteBusqueda()
         {
@@ -99,6 +102,73 @@ namespace Administracion_de_Taller
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            mostrarInputs();
+            
+        }
+
+        private void mostrarInputs()
+        {
+            textBox1.Enabled = true;
+            textBox1.Visible = true;
+            textBox1.Text = nombresText.Text;
+            nombresText.Visible = false;
+
+            textBox2.Enabled = true;
+            textBox2.Visible = true;
+            textBox2.Text = telefonoText.Text;
+            telefonoText.Visible = false;
+
+            textBox3.Enabled = true;
+            textBox3.Visible = true;
+            textBox3.Text = direccionText.Text;
+            direccionText.Visible = false;
+
+            button5.Enabled= true;
+            button5.Visible= true;
+        }
+        
+        private void ocultarInputs()
+        {
+            textBox1.Enabled = false;
+            textBox1.Visible = false;
+            textBox1.Text = "";
+            nombresText.Visible = true;
+
+            textBox2.Enabled = false;
+            textBox2.Visible = false;
+            textBox2.Text = "";
+            telefonoText.Visible = true;
+
+            textBox3.Enabled = false;
+            textBox3.Visible = false;
+            textBox3.Text = "";
+            direccionText.Visible = true;
+
+            button5.Enabled = false;
+            button5.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int clienteId = Int32.Parse(((FormClientes)formClientes).labelIdCliente.Text);
+
+            Cliente clienteRepositorio = operacionesCliente.obtenerUnClientePorId(clienteId);
+            //Actualizando datos del cliente
+            clienteRepositorio.Nombre = textBox1.Text;
+            clienteRepositorio.Telefono= textBox2.Text;
+            clienteRepositorio.Direccion = textBox3.Text;
+
+            operacionesCliente.actualizarDatosCliente(clienteRepositorio);
+            MessageBox.Show("Los datos han sido actualizados correctamente.");
+
+            ocultarInputs();
+
+            mostrarCliente(clienteId);
 
         }
     }

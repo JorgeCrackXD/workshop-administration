@@ -15,7 +15,7 @@ namespace Administracion_de_Taller.Models
         static string server = "localhost";
         static string database = "taller";
         static string user = "root";
-        static string password = "centauro@22447";
+        static string password = "2TadoiBr";
         static string port = "3306";
 
         string connectionString = "server=" + server + ";port=" + port + ";user id=" + user + ";password=" + password + ";database=" + database + ";";

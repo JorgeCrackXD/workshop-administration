@@ -68,67 +68,51 @@ namespace Administracion_de_Taller
 
         private void label1_Click(object sender, EventArgs e)
         {
-            mostrarFormClientes();
+            openChildForm(new FormClientes());
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            mostrarFormClientes();
+            openChildForm(new FormClientes());
         }
 
         private void panel3_MouseClick(object sender, MouseEventArgs e)
         {
-            mostrarFormClientes();
+            openChildForm(new FormClientes());
         }
 
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            mostrarFormAparatos();
+            openChildForm(new FormAparatos());
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            mostrarFormAparatos();
+            openChildForm(new FormAparatos());
         }
 
         private void panel4_MouseClick(object sender, MouseEventArgs e)
         {
-            mostrarFormAparatos();
+            openChildForm(new FormAparatos());
         }
 
-        private void mostrarFormClientes()
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
         {
-            if (formClientes == null)
+            if(activeForm != null)
             {
-                formClientes = new FormClientes();   //Create form if not created
-                formClientes.FormClosed += formClientes_FormClosed;  //Add eventhandler to cleanup after form closes
+                activeForm.Close();
             }
-            formClientes.Show(this);  //Show Form assigning this form as the forms owner
-            Hide();
-        }
-
-        private void mostrarFormAparatos()
-        {
-            if (formAparatos == null)
-            {
-                formAparatos = new FormAparatos();   //Create form if not created
-                formAparatos.FormClosed += formAparatos_FormClosed;  //Add eventhandler to cleanup after form closes
-            }
-            formAparatos.Show(this);  //Show Form assigning this form as the forms owner
-            Hide();
-        }
-
-        void formClientes_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formClientes = null;  //If form is closed make sure reference is set to null
-            Show();
-        }
-
-        void formAparatos_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formAparatos = null;  //If form is closed make sure reference is set to null
-            Show();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle= FormBorderStyle.None;
+            childForm.Dock= DockStyle.Fill;
+            panelForms.Controls.Add(childForm);
+            panelForms.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }

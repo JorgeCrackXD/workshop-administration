@@ -39,7 +39,6 @@ namespace Administracion_de_Taller
 
         private void FormAparatos_Load(object sender, EventArgs e)
         {
-            timer1.Start();
 
             // Llenamos el combobox con los clientes que hay.
             List<Cliente> clientes = operacionesCliente.obtenerClientes();
@@ -55,11 +54,6 @@ namespace Administracion_de_Taller
          
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            label3.Text = DateTime.Now.ToString("T");
-            label4.Text = DateTime.Now.ToLongDateString();
-        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -412,5 +406,7 @@ namespace Administracion_de_Taller
             formClientes.Show(this);  //Show Form assigning this form as the forms owner
             Hide();
         }
+
+
     }
 }

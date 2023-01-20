@@ -12,7 +12,6 @@ namespace Administracion_de_Taller.Repository
 {
     internal class OperacionesBdCliente
     {
-
         public Cliente obtenerUnClientePorId(int id)
         {
             Models.Conexion conexionBd = new Models.Conexion();
@@ -156,6 +155,28 @@ namespace Administracion_de_Taller.Repository
             MySqlConnection conexion = conexionBd.establecerConexion();
 
             string query = $"UPDATE cliente SET aparatosEnTaller={cliente.AparatosEnTaller} WHERE id = {cliente.Id}";
+
+            try
+            {
+                MySqlCommand dbcmd = conexion.CreateCommand();
+                dbcmd.CommandText = query;
+                dbcmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return true;
+        }
+
+        public bool actualizarDatosCliente(Cliente cliente)
+        {
+            Models.Conexion conexionBd = new Models.Conexion();
+            MySqlConnection conexion = conexionBd.establecerConexion();
+
+            string query = $"UPDATE cliente SET nombre='{cliente.Nombre}', telefono='{cliente.Telefono}', direccion='{cliente.Direccion}' WHERE id = {cliente.Id}";
 
             try
             {

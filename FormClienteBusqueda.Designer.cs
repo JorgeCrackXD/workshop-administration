@@ -41,13 +41,20 @@
             this.fechaRegistroText = new System.Windows.Forms.Label();
             this.aparatosTallerText = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(311, 9);
+            this.label7.Location = new System.Drawing.Point(398, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(396, 40);
             this.label7.TabIndex = 5;
@@ -55,6 +62,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 107);
@@ -65,6 +73,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(12, 177);
@@ -75,6 +84,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(12, 255);
@@ -85,6 +95,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(12, 335);
@@ -95,6 +106,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Red;
@@ -106,8 +118,9 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(359, 591);
+            this.button1.Location = new System.Drawing.Point(842, 368);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(272, 101);
             this.button1.TabIndex = 12;
@@ -117,6 +130,7 @@
             // 
             // nombresText
             // 
+            this.nombresText.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nombresText.AutoSize = true;
             this.nombresText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nombresText.Location = new System.Drawing.Point(217, 107);
@@ -127,6 +141,7 @@
             // 
             // telefonoText
             // 
+            this.telefonoText.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.telefonoText.AutoSize = true;
             this.telefonoText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.telefonoText.Location = new System.Drawing.Point(217, 177);
@@ -137,6 +152,7 @@
             // 
             // direccionText
             // 
+            this.direccionText.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.direccionText.AutoSize = true;
             this.direccionText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.direccionText.Location = new System.Drawing.Point(217, 255);
@@ -147,6 +163,7 @@
             // 
             // fechaRegistroText
             // 
+            this.fechaRegistroText.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.fechaRegistroText.AutoSize = true;
             this.fechaRegistroText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fechaRegistroText.Location = new System.Drawing.Point(356, 335);
@@ -157,6 +174,7 @@
             // 
             // aparatosTallerText
             // 
+            this.aparatosTallerText.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.aparatosTallerText.AutoSize = true;
             this.aparatosTallerText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.aparatosTallerText.ForeColor = System.Drawing.Color.Red;
@@ -168,21 +186,99 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(638, 420);
+            this.button2.Location = new System.Drawing.Point(842, 99);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(272, 47);
+            this.button2.Size = new System.Drawing.Size(272, 67);
             this.button2.TabIndex = 19;
             this.button2.Text = "Ver aparatos";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(842, 275);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(272, 70);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Registrar aparato";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(842, 186);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(272, 70);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "Modificar información";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(243, 107);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(352, 46);
+            this.textBox1.TabIndex = 22;
+            this.textBox1.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(243, 177);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(352, 46);
+            this.textBox2.TabIndex = 23;
+            this.textBox2.Visible = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.Location = new System.Drawing.Point(243, 249);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(352, 46);
+            this.textBox3.TabIndex = 24;
+            this.textBox3.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button5.Enabled = false;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.Location = new System.Drawing.Point(842, 186);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(272, 70);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "GUARDAR";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // FormClienteBusqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1140, 635);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.aparatosTallerText);
             this.Controls.Add(this.fechaRegistroText);
@@ -221,5 +317,11 @@
         private Label fechaRegistroText;
         private Label aparatosTallerText;
         private Button button2;
+        private Button button3;
+        private Button button4;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private Button button5;
     }
 }
