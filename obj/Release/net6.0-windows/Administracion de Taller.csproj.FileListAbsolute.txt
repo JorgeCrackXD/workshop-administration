@@ -33,3 +33,16 @@ C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\
 C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.pdb
 C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion de Taller.genruntimeconfig.cache
 C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\ref\Administracion de Taller.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\CloudinaryDotNet.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.FormAparatoBusqueda.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.FormAparatos.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.FormClienteBusqueda.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.FormDiagnosticarAparato.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.FormNuevaMarca.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.FormNuevoTipo.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\Administracion_de_Taller.GuardarAparatoCliente.resources

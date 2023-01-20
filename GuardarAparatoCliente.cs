@@ -33,6 +33,10 @@ namespace Administracion_de_Taller
 
         private OperacionesBdCliente operacionesBdCliente = new OperacionesBdCliente(); 
 
+        private OperacionesBdMarca operacionesMarca = new OperacionesBdMarca();
+
+        private OperacionesBdTipo operacionesTipo = new OperacionesBdTipo();
+
         public GuardarAparatoCliente()
         {
             InitializeComponent();
@@ -103,6 +107,11 @@ namespace Administracion_de_Taller
                 tipo = comboBox1.SelectedItem.ToString();
             });
 
+            String marca = "";
+            this.Invoke((MethodInvoker)delegate ()
+            {
+                marca = comboBox1.SelectedItem.ToString();
+            });
             // Se crea el objeto de la imagen si es que existe una imagen
             ImagenAparato imagenAparato = new ImagenAparato(null, null, 0);
             if( path != null)
@@ -114,7 +123,7 @@ namespace Administracion_de_Taller
 
             }
             // Se crea el objeto del aparato
-            Aparato aparato = new Aparato(tipo, textBox3.Text, textBox4.Text, this.control(), this.cable(), DateTime.Now.ToString("yyyy/MM/dd"), 0, imagenAparato.LinkCloudinary, idCliente);
+            Aparato aparato = new Aparato(tipo, marca, textBox4.Text, this.control(), this.cable(), DateTime.Now.ToString("yyyy/MM/dd"), 0, imagenAparato.LinkCloudinary, idCliente);
 
             try
             {
@@ -151,6 +160,8 @@ namespace Administracion_de_Taller
 
             textBox1.Text = nombreCliente;
 
+            llenarTiposyMarcas();
+
             idCliente = Int32.Parse(((FormClientes)formClientes).labelIdCliente.Text);
         }
 
@@ -184,7 +195,7 @@ namespace Administracion_de_Taller
 
         private Boolean validarInputs()
         {
-            String marca = textBox3.Text;
+            String marca = comboBox4.SelectedItem.ToString();
             String modelo = textBox4.Text;
 
             String test = comboBox1.SelectedText;
@@ -214,6 +225,23 @@ namespace Administracion_de_Taller
             }
 
             return true;
+        }
+
+        private void llenarTiposyMarcas()
+        {
+            List<Marca> marcas = operacionesMarca.obtenerMarcas();
+
+            foreach (Marca marca in marcas)
+            {
+                comboBox4.Items.Add(marca.Nombre);
+            }
+
+            List<Tipo> tipos = operacionesTipo.obtenerTipos();
+
+            foreach (Tipo tipo in tipos)
+            {
+                comboBox1.Items.Add(tipo.Nombre);
+            }
         }
     }
 }

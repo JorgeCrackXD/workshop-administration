@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,6 +62,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.labelIdAparato = new System.Windows.Forms.Label();
             this.labelNombreCliente = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -198,6 +200,8 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(236, 77);
             this.panel4.TabIndex = 4;
+            this.panel4.Click += new System.EventHandler(this.panel4_Click);
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label2
             // 
@@ -209,6 +213,7 @@
             this.label2.Size = new System.Drawing.Size(130, 33);
             this.label2.TabIndex = 3;
             this.label2.Text = "Clientes";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox3
             // 
@@ -220,6 +225,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // panel3
             // 
@@ -263,18 +269,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Location = new System.Drawing.Point(12, 149);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 80;
-            this.dataGridView1.Size = new System.Drawing.Size(798, 587);
+            this.dataGridView1.Size = new System.Drawing.Size(798, 516);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
@@ -347,18 +353,6 @@
             this.comboBox1.Enabled = false;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "TELEVISION",
-            "ESTEREO",
-            "MICROONDAS",
-            "GRABADORA",
-            "BOCINA AMPLIFICADA",
-            "BOCINA PEQUEÑA",
-            "COMPUTADORA",
-            "AMPLIFICADOR",
-            "COMPUTADORA",
-            "LAPTOP",
-            "DECODIFICADOR ANALOGICO"});
             this.comboBox1.Location = new System.Drawing.Point(974, 149);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(309, 38);
@@ -371,15 +365,6 @@
             this.comboBox2.Enabled = false;
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "LG",
-            "SAMSUNG",
-            "SONY",
-            "HISENSE",
-            "TCL",
-            "PANASONIC",
-            "GENERAL ELECTRIC",
-            "WHIRPOOL"});
             this.comboBox2.Location = new System.Drawing.Point(974, 203);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(309, 38);
@@ -458,11 +443,35 @@
             this.labelNombreCliente.Text = "label10";
             this.labelNombreCliente.Visible = false;
             // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button7.Location = new System.Drawing.Point(846, 616);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(200, 49);
+            this.button7.TabIndex = 28;
+            this.button7.Text = "Agregar marca";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button8.Location = new System.Drawing.Point(1080, 616);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(203, 49);
+            this.button8.TabIndex = 29;
+            this.button8.Text = "Agregar tipo";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // FormAparatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 768);
+            this.ClientSize = new System.Drawing.Size(1310, 729);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.labelNombreCliente);
             this.Controls.Add(this.labelIdAparato);
             this.Controls.Add(this.button6);
@@ -538,5 +547,7 @@
         private Button button6;
         public Label labelIdAparato;
         public Label labelNombreCliente;
+        private Button button7;
+        private Button button8;
     }
 }

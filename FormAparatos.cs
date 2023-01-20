@@ -16,10 +16,14 @@ namespace Administracion_de_Taller
 {
     public partial class FormAparatos : Form
     {
+
         private OperacionesBdCliente operacionesCliente = new OperacionesBdCliente();
         private OperacionesBdAparato operacionesAparato = new OperacionesBdAparato();
+        private OperacionesBdMarca operacionesMarca = new OperacionesBdMarca();
+        private OperacionesBdTipo operacionesTipo = new OperacionesBdTipo();
 
         public FormAparatoBusqueda formAparatoBusqueda;
+        public FormClientes formClientes;
 
         private int filtroEstado;
 
@@ -44,6 +48,8 @@ namespace Administracion_de_Taller
                 comboBox4.Items.Add(cliente.Nombre);
             }
             allClientes = clientes;
+
+            llenarTiposyMarcas();
 
             llenarTabla(operacionesAparato.obtenerAparatos());
          
@@ -317,6 +323,12 @@ namespace Administracion_de_Taller
             Show();
         }
 
+        void formClientes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formClientes = null;
+            Show();
+        }
+
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             // Se manda a llamar la interfaz de ver información del cliente
@@ -339,6 +351,66 @@ namespace Administracion_de_Taller
                 formAparatoBusqueda.Show(this);  //Show Form assigning this form as the forms owner
                 Hide();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            FormNuevaMarca formMarca = new FormNuevaMarca();
+            formMarca.Show(this);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            FormNuevoTipo formTipo = new FormNuevoTipo();
+            formTipo.Show(this);
+        }
+
+        private void llenarTiposyMarcas()
+        {
+            List<Marca> marcas = operacionesMarca.obtenerMarcas();
+
+            foreach (Marca marca in marcas)
+            {
+                comboBox2.Items.Add(marca.Nombre);
+            }
+
+            List<Tipo> tipos = operacionesTipo.obtenerTipos();
+
+            foreach(Tipo tipo in tipos)
+            {
+                comboBox1.Items.Add(tipo.Nombre);
+            }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            mostrarFormularioClientes();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            mostrarFormularioClientes();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            mostrarFormularioClientes();
+        }
+
+        private void mostrarFormularioClientes()
+        {
+            if (formClientes == null)
+            {
+                formClientes = new FormClientes();   //Create form if not created
+                formClientes.FormClosed += formClientes_FormClosed;  //Add eventhandler to cleanup after form closes
+            }
+            formClientes.Show(this);  //Show Form assigning this form as the forms owner
+            Hide();
         }
     }
 }

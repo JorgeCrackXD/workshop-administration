@@ -44,3 +44,5 @@ C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\Ne
 C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormAparatos.resources
 C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormAparatoBusqueda.resources
 C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormDiagnosticarAparato.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormNuevaMarca.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormNuevoTipo.resources

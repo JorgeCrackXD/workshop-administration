@@ -14,6 +14,34 @@ C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\BouncyCastle.Crypto.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\System.Data.SqlClient.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\sni.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.csproj.AssemblyReference.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.Form1.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormClientes.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.Properties.Resources.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.csproj.GenerateResource.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.AssemblyInfoInputs.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.AssemblyInfo.cs
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.csproj.CoreCompileInputs.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.csproj.CopyComplete
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\refint\Administracion de Taller.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.pdb
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.genruntimeconfig.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\ref\Administracion de Taller.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\CloudinaryDotNet.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\Microsoft.Extensions.Primitives.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\Newtonsoft.Json.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormAparatoBusqueda.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormAparatos.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormClienteBusqueda.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormDiagnosticarAparato.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormNuevaMarca.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormNuevoTipo.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.GuardarAparatoCliente.resources
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\Microsoft.CSharp.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\Microsoft.VisualBasic.Core.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\Microsoft.Win32.Primitives.dll
@@ -513,18 +541,3 @@ C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\zh-Hant\UIAutomationTypes.resources.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\zh-Hant\WindowsBase.resources.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\zh-Hant\WindowsFormsIntegration.resources.dll
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.csproj.AssemblyReference.cache
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.Form1.resources
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormClientes.resources
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.Properties.Resources.resources
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.csproj.GenerateResource.cache
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.AssemblyInfoInputs.cache
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.AssemblyInfo.cs
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.csproj.CoreCompileInputs.cache
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.csproj.CopyComplete
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.dll
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\refint\Administracion de Taller.dll
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.pdb
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.genruntimeconfig.cache
-C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\ref\Administracion de Taller.dll
