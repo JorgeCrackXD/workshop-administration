@@ -70,6 +70,7 @@
             this.label1.Size = new System.Drawing.Size(165, 40);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nombre:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -92,6 +93,7 @@
             this.label4.Size = new System.Drawing.Size(192, 40);
             this.label4.TabIndex = 9;
             this.label4.Text = "Direccion:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -230,6 +232,7 @@
             this.textBox1.Size = new System.Drawing.Size(352, 46);
             this.textBox1.TabIndex = 22;
             this.textBox1.Visible = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -241,6 +244,7 @@
             this.textBox2.Size = new System.Drawing.Size(352, 46);
             this.textBox2.TabIndex = 23;
             this.textBox2.Visible = false;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -252,6 +256,7 @@
             this.textBox3.Size = new System.Drawing.Size(352, 46);
             this.textBox3.TabIndex = 24;
             this.textBox3.Visible = false;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // button5
             // 

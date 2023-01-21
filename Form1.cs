@@ -6,7 +6,9 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Administracion_de_Taller
 {
@@ -15,6 +17,9 @@ namespace Administracion_de_Taller
         public FormClientes formClientes;
 
         public FormAparatos formAparatos;
+
+        WindowsMediaPlayer wplayer = new WindowsMediaPlayer();
+
 
         public Form1()
         {
@@ -29,11 +34,11 @@ namespace Administracion_de_Taller
         private void timer1_Tick(object sender, EventArgs e)
         {
             label3.Text = DateTime.Now.ToString("T");
-            label4.Text = DateTime.Now.ToLongDateString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             timer1.Start();
 
             //Establecer conexion a la BD
@@ -113,6 +118,44 @@ namespace Administracion_de_Taller
             panelForms.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void reproducirMusica()
+        {
+            string[] fileArray = Directory.GetFiles(@"C:\Music", "*.mp3");
+            if(fileArray.Length < 0)
+            {
+                MessageBox.Show("No hay música actualmente.");
+            }
+            Random rnd = new Random();
+
+            int cancion = rnd.Next(fileArray.Length);
+
+            wplayer.URL = fileArray[cancion];
+            wplayer.controls.play();
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            reproducirMusica();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormAccionRapidaCliente());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormNuevaMarca formMarca = new FormNuevaMarca();
+            formMarca.Show(this);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FormNuevoTipo formTipo = new FormNuevoTipo();
+            formTipo.Show(this);
         }
     }
 }

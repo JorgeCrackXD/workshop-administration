@@ -156,6 +156,8 @@ namespace Administracion_de_Taller
 
         private void GuardarAparatoCliente_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+
             String nombreCliente = ((FormClientes)formClientes).labelNombre.Text;
 
             textBox1.Text = nombreCliente;
@@ -242,6 +244,32 @@ namespace Administracion_de_Taller
             {
                 comboBox1.Items.Add(tipo.Nombre);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(comboBox4.SelectedItem == null)
+            {
+                comboBox4.Items.Clear();
+                List<Marca> marcas = operacionesMarca.obtenerMarcas();
+
+                foreach (Marca marca in marcas)
+                {
+                    comboBox4.Items.Add(marca.Nombre);
+                }
+            }
+            
+            if(comboBox1.SelectedItem == null)
+            {
+                comboBox1.Items.Clear();
+                List<Tipo> tipos = operacionesTipo.obtenerTipos();
+
+                foreach (Tipo tipo in tipos)
+                {
+                    comboBox1.Items.Add(tipo.Nombre);
+                }
+            }
+            
         }
     }
 }

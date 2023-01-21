@@ -28,7 +28,6 @@ namespace Administracion_de_Taller
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Owner.Show();  //Show the previous form
             Close();
         }
 
@@ -169,6 +168,31 @@ namespace Administracion_de_Taller
             ocultarInputs();
 
             mostrarCliente(clienteId);
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

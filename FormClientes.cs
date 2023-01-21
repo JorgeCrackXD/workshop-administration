@@ -72,13 +72,7 @@ namespace Administracion_de_Taller
             DialogResult dialogResult = MessageBox.Show("Desea registrar un aparato para este cliente?", "Aparato cliente", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                if (formGuardarAparatoCliente == null)
-                {
-                    formGuardarAparatoCliente = new GuardarAparatoCliente();   //Create form if not created
-                    formGuardarAparatoCliente.FormClosed += formGuardarAparatoCliente_FormClosed;  //Add eventhandler to cleanup after form closes
-                }
-                formGuardarAparatoCliente.Show(this);  //Show Form assigning this form as the forms owner
-                Hide();
+                openChildForm(new GuardarAparatoCliente());  //Show Form assigning this form as the forms owner
             }
         }
 
@@ -217,19 +211,6 @@ namespace Administracion_de_Taller
             {
                 button2.Enabled = false;
             }
-        }
-
-
-        void formClienteBusqueda_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formClienteBusqueda = null;  //If form is closed make sure reference is set to null
-            Show();
-        }
-
-        void formGuardarAparatoCliente_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formGuardarAparatoCliente = null;  //If form is closed make sure reference is set to null
-            Show();
         }
 
         private Form activeForm = null;
