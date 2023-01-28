@@ -39,7 +39,46 @@ namespace Administracion_de_Taller.Repository
                         cliente.Nombre = reader.GetString(1);
                         cliente.Telefono = reader.GetString(2);
                         cliente.Direccion = reader.GetString(3);
-                        cliente.FechaRegistro = reader.GetString(4);
+                        cliente.FechaRegistro = DateTime.Parse(reader.GetString(4));
+                        cliente.AparatosEnTaller = int.Parse(reader.GetString(5));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return cliente;
+        }
+
+        public Cliente obtenerClientePorNombre(String nombre)
+        {
+            Models.Conexion conexionBd = new Models.Conexion();
+            MySqlConnection conexion = conexionBd.establecerConexion();
+
+            MySqlDataReader reader = null;
+
+            string query = $"SELECT * FROM cliente WHERE nombre = '{nombre}'";
+
+            Cliente cliente = new Cliente();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                reader = comando.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    int contador = 0;
+
+                    while (reader.Read())
+                    {
+                        cliente.Id = int.Parse(reader.GetString(0));
+                        cliente.Nombre = reader.GetString(1);
+                        cliente.Telefono = reader.GetString(2);
+                        cliente.Direccion = reader.GetString(3);
+                        cliente.FechaRegistro = DateTime.Parse(reader.GetString(4));
                         cliente.AparatosEnTaller = int.Parse(reader.GetString(5));
                     }
                 }
@@ -77,7 +116,7 @@ namespace Administracion_de_Taller.Repository
                         cliente.Nombre = reader.GetString(1);
                         cliente.Telefono = reader.GetString(2);
                         cliente.Direccion = reader.GetString(3);
-                        cliente.FechaRegistro = reader.GetString(4);
+                        cliente.FechaRegistro = DateTime.Parse(reader.GetString(4));
                         cliente.AparatosEnTaller = int.Parse(reader.GetString(5));
                         clientes.Add(cliente);
                     }
@@ -120,7 +159,7 @@ namespace Administracion_de_Taller.Repository
                         cliente.Nombre = reader.GetString(1);
                         cliente.Telefono = reader.GetString(2);
                         cliente.Direccion = reader.GetString(3);
-                        cliente.FechaRegistro = reader.GetString(4);
+                        cliente.FechaRegistro = DateTime.Parse(reader.GetString(4));
                         cliente.AparatosEnTaller = int.Parse(reader.GetString(5));
                         clientes.Add(cliente);
                     }
@@ -138,7 +177,7 @@ namespace Administracion_de_Taller.Repository
             Models.Conexion conexionBd = new Models.Conexion();
             MySqlConnection conexion = conexionBd.establecerConexion();
 
-            string query = $"INSERT INTO cliente (nombre, telefono, direccion, fechaRegistro, aparatosEnTaller) VALUES ('{cliente.Nombre}', '{cliente.Telefono}', '{cliente.Direccion}', '{cliente.FechaRegistro}', {cliente.AparatosEnTaller})";
+            string query = $"INSERT INTO cliente (nombre, telefono, direccion, fechaRegistro, aparatosEnTaller) VALUES ('{cliente.Nombre}', '{cliente.Telefono}', '{cliente.Direccion}', CURRENT_DATE(), {cliente.AparatosEnTaller})";
 
             MySqlCommand dbcmd = conexion.CreateCommand();
             dbcmd.CommandText = query;

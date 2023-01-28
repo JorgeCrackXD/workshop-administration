@@ -19,6 +19,8 @@ namespace Administracion_de_Taller
 
         System.Windows.Forms.Form formClientes = System.Windows.Forms.Application.OpenForms["FormClientes"];
 
+        System.Windows.Forms.Form formPrincipal = System.Windows.Forms.Application.OpenForms["form1"];
+
         private OperacionesBdCliente operacionesCliente = new OperacionesBdCliente();
 
         public FormClienteBusqueda()
@@ -78,10 +80,10 @@ namespace Administracion_de_Taller
                         telefonoText.Text = reader.GetString(2);
 
                         cliente.Direccion = reader.GetString(3);
-                        direccionText.Text = reader.GetString(3);
-
-                        cliente.FechaRegistro = reader.GetString(4);
-                        fechaRegistroText.Text = reader.GetString(4);
+                        direccionText.Text = reader.GetString(3); 
+                        
+                        cliente.FechaRegistro = DateTime.Parse(reader.GetString(4));
+                        fechaRegistroText.Text = cliente.FechaRegistro.ToString("dd/MM/yyyy");
 
                         cliente.AparatosEnTaller = int.Parse(reader.GetString(5));
                         aparatosTallerText.Text = reader.GetString(5);
@@ -194,6 +196,29 @@ namespace Administracion_de_Taller
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openChildForm(new GuardarAparatoCliente());
+        }
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            ((Form1)formPrincipal).panelForms.Controls.Add(childForm);
+            ((Form1)formPrincipal).panelForms.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }

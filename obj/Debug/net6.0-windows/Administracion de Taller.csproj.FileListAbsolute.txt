@@ -58,3 +58,11 @@ C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\In
 C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Interop.WMPLib.dll
 C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion de Taller.csproj.ResolveComReference.cache
 C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormAccionRapidaCliente.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormAccionRapidaAparato.resources
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\System.Web.Mvc.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\System.Web.Razor.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\System.Web.Helpers.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\System.Web.WebPages.Deployment.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\System.Web.WebPages.Razor.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\System.Web.WebPages.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\Microsoft.Web.Infrastructure.dll

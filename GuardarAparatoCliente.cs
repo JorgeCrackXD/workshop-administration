@@ -25,7 +25,12 @@ namespace Administracion_de_Taller
 
         private int idCliente;
 
+        private int formDentro;
+
         System.Windows.Forms.Form formClientes = System.Windows.Forms.Application.OpenForms["FormClientes"];
+        System.Windows.Forms.Form formClienteBusqueda = System.Windows.Forms.Application.OpenForms["formClienteBusqueda"];
+        System.Windows.Forms.Form formPrincipal = System.Windows.Forms.Application.OpenForms["form1"];
+
 
         private OperacionesBdImagenAparato operacionesBdImagenAparato = new OperacionesBdImagenAparato();
 
@@ -75,20 +80,8 @@ namespace Administracion_de_Taller
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            MessageBox.Show("La imagen se ha subido con éxito");
-
-            DialogResult dialogResult = MessageBox.Show("Desea registrar un aparato más??", "Aparato nuevo para cliente", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                this.Hide();
-                GuardarAparatoCliente formGuardar = new GuardarAparatoCliente();
-                formGuardar.ShowDialog();
-            } else
-            {
-                FormClientes formClientes = new FormClientes();
-                this.Close();
-                formClientes.ShowDialog();
-            }
+            MessageBox.Show("Aparato registrado exitosamente.");
+           openChildForm(new FormAparatos());
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -112,6 +105,12 @@ namespace Administracion_de_Taller
             {
                 marca = comboBox1.SelectedItem.ToString();
             });
+
+            String problema = "";
+            this.Invoke((MethodInvoker)delegate ()
+            {
+                problema = richTextBox1.Text;
+            });
             // Se crea el objeto de la imagen si es que existe una imagen
             ImagenAparato imagenAparato = new ImagenAparato(null, null, 0);
             if( path != null)
@@ -123,7 +122,7 @@ namespace Administracion_de_Taller
 
             }
             // Se crea el objeto del aparato
-            Aparato aparato = new Aparato(tipo, marca, textBox4.Text, this.control(), this.cable(), DateTime.Now.ToString("yyyy/MM/dd"), 0, imagenAparato.LinkCloudinary, idCliente);
+            Aparato aparato = new Aparato(tipo, marca, textBox4.Text, this.control(), this.cable(), problema, DateTime.Now.ToString("yyyy/MM/dd"), 0, imagenAparato.LinkCloudinary, idCliente);
 
             try
             {
@@ -159,12 +158,19 @@ namespace Administracion_de_Taller
             timer1.Start();
 
             String nombreCliente = ((FormClientes)formClientes).labelNombre.Text;
-
             textBox1.Text = nombreCliente;
 
             llenarTiposyMarcas();
 
             idCliente = Int32.Parse(((FormClientes)formClientes).labelIdCliente.Text);
+
+            if (textBox1.Text == "labelNombre")
+            {
+                textBox1.Text = ((FormClienteBusqueda)formClienteBusqueda).nombresText.Text;
+                Cliente cliente = operacionesBdCliente.obtenerClientePorNombre(textBox1.Text);
+                idCliente = cliente.Id;
+                formDentro = 1;
+            }
         }
 
         private int cable()
@@ -270,6 +276,29 @@ namespace Administracion_de_Taller
                 }
             }
             
+        }
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            ((Form1)formPrincipal).panelForms.Controls.Add(childForm);
+            ((Form1)formPrincipal).panelForms.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -15,12 +15,15 @@ namespace Administracion_de_Taller
     public partial class FormAparatoBusqueda : Form
     {
         System.Windows.Forms.Form formAparatos = System.Windows.Forms.Application.OpenForms["FormAparatos"];
+        System.Windows.Forms.Form formPrincipal = System.Windows.Forms.Application.OpenForms["form1"];
 
         private OperacionesBdAparato OperacionesBdAparato = new OperacionesBdAparato();
 
         private String nombreCliente;
 
         public FormDiagnosticarAparato formDiagnosticarAparato = new FormDiagnosticarAparato();
+
+        private Aparato aparatoForm;
 
         public FormAparatoBusqueda()
         {
@@ -46,6 +49,7 @@ namespace Administracion_de_Taller
         private void mostrarAparato(int aparatoId)
         {
             Aparato aparato = OperacionesBdAparato.obtenerAparato(aparatoId);
+            aparatoForm = aparato;
 
             labelNombre.Text = nombreCliente;
             labelTipo.Text = aparato.Tipo;
@@ -122,19 +126,31 @@ namespace Administracion_de_Taller
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (formDiagnosticarAparato == null)
-            {
-                formDiagnosticarAparato = new FormDiagnosticarAparato();   //Create form if not created
-                formDiagnosticarAparato.FormClosed += formDiagnosticarAparato_FormClosed;  //Add eventhandler to cleanup after form closes
-            }
-            formDiagnosticarAparato.Show(this);  //Show Form assigning this form as the forms owner
-            Hide();
+            openChildForm(new FormDiagnosticarAparato());
         }
 
-        void formDiagnosticarAparato_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void button4_Click(object sender, EventArgs e)
         {
-            formDiagnosticarAparato = null;  //If form is closed make sure reference is set to null
-            Show();
+            MessageBox.Show(aparatoForm.Problema);
+        }
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            ((Form1)formPrincipal).panelForms.Controls.Add(childForm);
+            ((Form1)formPrincipal).panelForms.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }

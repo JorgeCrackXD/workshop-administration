@@ -47,9 +47,9 @@ namespace Administracion_de_Taller
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            ;
             // Creando un cliente con los datos a guardar
-            Cliente cliente = new Cliente(textBox2.Text + " " + textBox3.Text, textBox4.Text, textBox5.Text, DateTime.Now.ToString("yyyy/MM/dd"), 0);
+            Cliente cliente = new Cliente(textBox2.Text + " " + textBox3.Text, textBox4.Text, textBox5.Text, DateTime.Now, 0);
 
             try
             {
@@ -94,6 +94,8 @@ namespace Administracion_de_Taller
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridView1.Columns[5].HeaderText = "aparatos";
 

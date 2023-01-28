@@ -123,6 +123,16 @@ namespace Administracion_de_Taller.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Taller {
+            get {
+                object obj = ResourceManager.GetObject("Taller", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap transparencia {
             get {
                 object obj = ResourceManager.GetObject("transparencia", resourceCulture);

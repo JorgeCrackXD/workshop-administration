@@ -35,7 +35,7 @@ namespace Administracion_de_Taller
             cliente.Nombre = textBox1.Text; 
             cliente.Telefono = textBox2.Text;
             cliente.Direccion = textBox3.Text;
-            cliente.FechaRegistro = DateTime.Now.ToString("yyyy/MM/dd");
+            cliente.FechaRegistro = DateTime.Now;
             cliente.AparatosEnTaller = 0;
 
             operacionesCliente.insertarCliente(cliente);

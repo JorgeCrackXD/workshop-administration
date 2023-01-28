@@ -1,6 +1,5 @@
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\Administracion de Taller.exe
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\Administracion de Taller.dll
-C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\Administracion de Taller.deps.json
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\Administracion de Taller.runtimeconfig.json
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\Administracion de Taller.dll.config
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\Administracion de Taller.pdb
@@ -515,7 +514,15 @@ C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\MySql.Data.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\ZstdNet.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\MySqlConnector.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\NAudio.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\NAudio.Asio.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\NAudio.Core.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\NAudio.Midi.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\NAudio.Wasapi.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\NAudio.WinForms.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\NAudio.WinMM.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\Newtonsoft.Json.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\BouncyCastle.Crypto.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\System.Data.SqlClient.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\sni.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\publish\win-x64\Administracion de Taller.deps.json

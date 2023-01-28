@@ -14,6 +14,7 @@ namespace Administracion_de_Taller.Models
         private string modelo;
         private int control;
         private int cable;
+        private string problema;
         private string fechaIngreso;
         private string fechaDiagnostico;
         private string fechaEntrega;
@@ -21,7 +22,7 @@ namespace Administracion_de_Taller.Models
         private string linkCloudinary;
         private int idCliente;
 
-        public Aparato(int id, string tipo, string marca, string modelo, int control, int cable, string fechaIngreso, string fechaDiagnostico, string fechaEntrega, int entregado, string linkCloudinary, int idCliente)
+        public Aparato(int id, string tipo, string marca, string modelo, int control, int cable, string problema, string fechaIngreso, string fechaDiagnostico, string fechaEntrega, int entregado, string linkCloudinary, int idCliente)
         {
             this.id = id;
             this.tipo = tipo;
@@ -29,6 +30,7 @@ namespace Administracion_de_Taller.Models
             this.modelo = modelo;
             this.control = control;
             this.cable = cable;
+            this.problema = problema;
             this.fechaIngreso = fechaIngreso;
             this.fechaDiagnostico = fechaDiagnostico;
             this.fechaEntrega = fechaEntrega;
@@ -42,13 +44,14 @@ namespace Administracion_de_Taller.Models
 
         }
 
-        public Aparato(string tipo, string marca, string modelo, int control, int cable, string fechaIngreso, int entregado, string linkCloudinary, int idCliente)
+        public Aparato(string tipo, string marca, string modelo, int control, int cable, string problema, string fechaIngreso, int entregado, string linkCloudinary, int idCliente)
         {
             this.tipo = tipo;
             this.marca = marca;
             this.modelo = modelo;
             this.control = control;
             this.cable = cable;
+            this.problema = problema;
             this.fechaIngreso = fechaIngreso;
             this.entregado = entregado;
             this.linkCloudinary = linkCloudinary;
@@ -67,5 +70,6 @@ namespace Administracion_de_Taller.Models
         public int Entregado { get => entregado; set => entregado = value; }
         public string LinkCloudinary { get => linkCloudinary; set => linkCloudinary = value; }
         public int IdCliente { get => idCliente; set => idCliente = value; }
+        public string Problema { get => problema; set => problema = value; }
     }
 }

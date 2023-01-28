@@ -541,3 +541,16 @@ C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\zh-Hant\UIAutomationTypes.resources.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\zh-Hant\WindowsBase.resources.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\zh-Hant\WindowsFormsIntegration.resources.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\NAudio.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\NAudio.Asio.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\NAudio.Core.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\NAudio.Midi.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\NAudio.Wasapi.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\NAudio.WinForms.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\NAudio.WinMM.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\AxInterop.WMPLib.dll
+C:\Users\jorge\source\repos\Administracion de Taller\bin\Release\net6.0-windows\win-x64\Interop.WMPLib.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Interop.WMPLib.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion de Taller.csproj.ResolveComReference.cache
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormAccionRapidaAparato.resources
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Release\net6.0-windows\win-x64\Administracion_de_Taller.FormAccionRapidaCliente.resources

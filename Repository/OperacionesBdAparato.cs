@@ -20,7 +20,7 @@ namespace Administracion_de_Taller.Repository
             Conexion conexionBd = new Models.Conexion();
             MySqlConnection conexion = conexionBd.establecerConexion();
 
-            string query = $"INSERT INTO aparato (tipo, marca, modelo, control, cable, entregado, linkCloudinary, idCliente, fechaIngreso) VALUES ('{aparato.Tipo}', '{aparato.Marca}', '{aparato.Modelo}', '{aparato.Control}', '{aparato.Cable}', '{aparato.Entregado}', '{aparato.LinkCloudinary}', '{aparato.IdCliente}', '{aparato.FechaIngreso}')";
+            string query = $"INSERT INTO aparato (tipo, marca, modelo, control, cable, problema, entregado, linkCloudinary, idCliente, fechaIngreso) VALUES ('{aparato.Tipo}', '{aparato.Marca}', '{aparato.Modelo}', '{aparato.Control}', '{aparato.Cable}', '{aparato.Problema}', '{aparato.Entregado}', '{aparato.LinkCloudinary}', '{aparato.IdCliente}', '{aparato.FechaIngreso}')";
 
             MySqlCommand dbcmd = conexion.CreateCommand();
             dbcmd.CommandText = query;
@@ -57,11 +57,12 @@ namespace Administracion_de_Taller.Repository
                         aparato.Modelo = reader.GetString(3);
                         aparato.Control = int.Parse(reader.GetString(4));
                         aparato.Cable = int.Parse(reader.GetString(5));
-                        aparato.FechaIngreso = reader.GetString(6);
-                        aparato.FechaDiagnostico = (reader.IsDBNull(7)) ? "" : reader.GetString(7);
-                        aparato.FechaEntrega = (reader.IsDBNull(8)) ? "" : reader.GetString(8);
-                        aparato.Entregado= int.Parse(reader.GetString(9));
-                        aparato.LinkCloudinary = reader.GetString(10);
+                        aparato.Problema = reader.GetString(6);
+                        aparato.FechaIngreso = reader.GetString(7);
+                        aparato.FechaDiagnostico = (reader.IsDBNull(8)) ? "" : reader.GetString(7);
+                        aparato.FechaEntrega = (reader.IsDBNull(9)) ? "" : reader.GetString(8);
+                        aparato.Entregado= int.Parse(reader.GetString(10));
+                        aparato.LinkCloudinary = reader.GetString(11);
                     }
                 }
             }
@@ -96,13 +97,13 @@ namespace Administracion_de_Taller.Repository
 
                     while (reader.Read())
                     {
-                        Cliente cliente = operacionesBdCliente.obtenerUnClientePorId(int.Parse(reader.GetString(11)));
+                        Cliente cliente = operacionesBdCliente.obtenerUnClientePorId(int.Parse(reader.GetString(12)));
                         AparatoTabla aparato = new AparatoTabla();
                         aparato.Id = int.Parse(reader.GetString(0));
                         aparato.Tipo = reader.GetString(1);
                         aparato.Marca = reader.GetString(2);
                         aparato.Modelo = reader.GetString(3);
-                        aparato.FechaIngreso = reader.GetString(6);
+                        aparato.FechaIngreso = reader.GetString(7);
                         aparato.Cliente = cliente.Nombre;
                         aparatos.Add(aparato);
                     }
@@ -131,13 +132,13 @@ namespace Administracion_de_Taller.Repository
                 {
                     while (reader.Read())
                     {
-                        Cliente cliente = operacionesBdCliente.obtenerUnClientePorId(int.Parse(reader.GetString(11)));
+                        Cliente cliente = operacionesBdCliente.obtenerUnClientePorId(int.Parse(reader.GetString(12)));
                         AparatoTabla aparato = new AparatoTabla();
                         aparato.Id = int.Parse(reader.GetString(0));
                         aparato.Tipo = reader.GetString(1);
                         aparato.Marca = reader.GetString(2);
                         aparato.Modelo = reader.GetString(3);
-                        aparato.FechaIngreso = reader.GetString(6);
+                        aparato.FechaIngreso = reader.GetString(7);
                         aparato.Cliente = cliente.Nombre;
                         aparatos.Add(aparato);
                     }

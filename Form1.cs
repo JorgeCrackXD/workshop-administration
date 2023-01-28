@@ -41,34 +41,6 @@ namespace Administracion_de_Taller
 
             timer1.Start();
 
-            //Establecer conexion a la BD
-            Conexion conexionBd = new Models.Conexion();
-            MySqlConnection conexion = conexionBd.establecerConexion();
-
-            MySqlDataReader reader = null;
-            String query = "SELECT * FROM aparato WHERE entregado=0";
-
-            try
-            {
-                MySqlCommand comando = new MySqlCommand(query, conexion);
-                reader = comando.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    label8.Text = "Hay aparatos pendientes por reparar.";
-                    label8.ForeColor = Color.Red;
-                    button1.Visible = true;
-                    conexion.Close();
-                }
-                else
-                {
-                    label8.Text = "Felicitaciones, no hay reparaciones pendientes.";
-                    label8.ForeColor = Color.Red;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -120,27 +92,6 @@ namespace Administracion_de_Taller
             childForm.Show();
         }
 
-        private void reproducirMusica()
-        {
-            string[] fileArray = Directory.GetFiles(@"C:\Music", "*.mp3");
-            if(fileArray.Length < 0)
-            {
-                MessageBox.Show("No hay música actualmente.");
-            }
-            Random rnd = new Random();
-
-            int cancion = rnd.Next(fileArray.Length);
-
-            wplayer.URL = fileArray[cancion];
-            wplayer.controls.play();
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            reproducirMusica();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             openChildForm(new FormAccionRapidaCliente());
@@ -156,6 +107,21 @@ namespace Administracion_de_Taller
         {
             FormNuevoTipo formTipo = new FormNuevoTipo();
             formTipo.Show(this);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormAccionRapidaAparato());
+        }
+
+        private void panelForms_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

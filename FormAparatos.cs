@@ -25,6 +25,9 @@ namespace Administracion_de_Taller
         public FormAparatoBusqueda formAparatoBusqueda;
         public FormClientes formClientes;
 
+        System.Windows.Forms.Form formPrincipal = System.Windows.Forms.Application.OpenForms["form1"];
+
+
         private int filtroEstado;
 
         public int idAparato;
@@ -311,18 +314,6 @@ namespace Administracion_de_Taller
             verificarFiltros();
         }
 
-        void formAparatoBusqueda_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formAparatoBusqueda = null;  //If form is closed make sure reference is set to null
-            Show();
-        }
-
-        void formClientes_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formClientes = null;
-            Show();
-        }
-
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             // Se manda a llamar la interfaz de ver información del cliente
@@ -339,11 +330,9 @@ namespace Administracion_de_Taller
 
                 if (formAparatoBusqueda == null)
                 {
-                    formAparatoBusqueda = new FormAparatoBusqueda();   //Create form if not created
-                    formAparatoBusqueda.FormClosed += formAparatoBusqueda_FormClosed;  //Add eventhandler to cleanup after form closes
+                    openChildForm(new FormAparatoBusqueda());
                 }
-                formAparatoBusqueda.Show(this);  //Show Form assigning this form as the forms owner
-                Hide();
+                
             }
         }
 
@@ -376,37 +365,24 @@ namespace Administracion_de_Taller
             }
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
+        private Form activeForm = null;
 
-        }
-
-        private void panel4_Click(object sender, EventArgs e)
+        private void openChildForm(Form childForm)
         {
-            mostrarFormularioClientes();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            mostrarFormularioClientes();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            mostrarFormularioClientes();
-        }
-
-        private void mostrarFormularioClientes()
-        {
-            if (formClientes == null)
+            if (activeForm != null)
             {
-                formClientes = new FormClientes();   //Create form if not created
-                formClientes.FormClosed += formClientes_FormClosed;  //Add eventhandler to cleanup after form closes
+                activeForm.Close();
             }
-            formClientes.Show(this);  //Show Form assigning this form as the forms owner
-            Hide();
-        }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
 
+            ((Form1)formPrincipal).panelForms.Controls.Add(childForm);
+            ((Form1)formPrincipal).panelForms.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
     }
 }

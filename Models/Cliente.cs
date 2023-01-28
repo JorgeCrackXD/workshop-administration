@@ -12,10 +12,10 @@ namespace Administracion_de_Taller.Models
         private string nombre;
         private string telefono;
         private string direccion;
-        private string fechaRegistro;
+        private DateTime fechaRegistro;
         private int aparatosEnTaller;
 
-        public Cliente(string nombre, string telefono, string direccion, string fechaRegistro, int aparatosEnTaller)
+        public Cliente(string nombre, string telefono, string direccion, DateTime fechaRegistro, int aparatosEnTaller)
         {
             this.nombre = nombre;
             this.telefono = telefono;
@@ -38,7 +38,7 @@ namespace Administracion_de_Taller.Models
         public string Nombre { get => nombre; set => nombre = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Direccion { get => direccion; set => direccion = value; }
-        public string FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
+        public DateTime FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
         public int AparatosEnTaller { get => aparatosEnTaller; set => aparatosEnTaller = value; }
     }
 }

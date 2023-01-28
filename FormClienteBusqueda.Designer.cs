@@ -122,9 +122,9 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(842, 368);
+            this.button1.Location = new System.Drawing.Point(842, 404);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(272, 101);
+            this.button1.Size = new System.Drawing.Size(272, 65);
             this.button1.TabIndex = 12;
             this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = true;
@@ -209,6 +209,7 @@
             this.button3.TabIndex = 20;
             this.button3.Text = "Registrar aparato";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -316,7 +317,6 @@
         private Label label5;
         private Label label6;
         private Button button1;
-        private Label nombresText;
         private Label telefonoText;
         private Label direccionText;
         private Label fechaRegistroText;
@@ -328,5 +328,6 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private Button button5;
+        public Label nombresText;
     }
 }

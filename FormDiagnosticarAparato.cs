@@ -17,6 +17,10 @@ namespace Administracion_de_Taller
         private int aparatoIdGlobal;
         private string nombreCliente;
         private OperacionesBdAparato operacionesBdAparato = new OperacionesBdAparato();
+        private OperacionesBdCliente operacionesBdCliente = new OperacionesBdCliente();
+        private OperacionesBdDiagnostico operacionesBdDiagnostico= new OperacionesBdDiagnostico();
+        private Aparato aparatoForm;
+        private Cliente clienteForm;
 
         System.Windows.Forms.Form formAparatos = System.Windows.Forms.Application.OpenForms["FormAparatos"];
         public FormDiagnosticarAparato()
@@ -36,6 +40,9 @@ namespace Administracion_de_Taller
         private void mostrarAparato(int aparatoId)
         {
             Aparato aparato = operacionesBdAparato.obtenerAparato(aparatoId);
+            Cliente cliente = operacionesBdCliente.obtenerClientePorNombre(nombreCliente);
+            aparatoForm = aparato;
+            clienteForm = cliente;
 
             textBox1.Text = nombreCliente;
             textBox2.Text = aparato.Tipo;
@@ -72,6 +79,15 @@ namespace Administracion_de_Taller
         {
             Owner.Show();  //Show the previous form
             Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Diagnostico diagnostico = new Diagnostico(richTextBox1.Text, Int32.Parse(textBox7.Text), DateTime.Now, aparatoForm.Id, clienteForm.Id);
+            operacionesBdDiagnostico.insertarDiagnostico(diagnostico);
+
+            MessageBox.Show("El diagnostico ha sido asignado correctamente.");
+
         }
     }
 }
