@@ -123,5 +123,19 @@ namespace Administracion_de_Taller
         {
             
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormDiagnosticos());
+        }
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new FormDiagnosticos());
+        }
+
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            openChildForm(new FormDiagnosticos());
+        }
     }
 }

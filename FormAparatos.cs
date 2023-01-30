@@ -28,7 +28,7 @@ namespace Administracion_de_Taller
         System.Windows.Forms.Form formPrincipal = System.Windows.Forms.Application.OpenForms["form1"];
 
 
-        private int filtroEstado;
+        private string filtroEstado;
 
         public int idAparato;
         public string nombreCliente;
@@ -169,7 +169,7 @@ namespace Administracion_de_Taller
             {
                 case "1234":
                     idCliente = buscarIdCliente();
-                    query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND marca='{comboBox2.SelectedItem.ToString()}' AND entregado={filtroEstado} AND idCliente={idCliente}";
+                    query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND marca='{comboBox2.SelectedItem.ToString()}' AND entregado='{filtroEstado}' AND idCliente={idCliente}";
                     break;
                 case "1":
                     query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}'";
@@ -178,7 +178,7 @@ namespace Administracion_de_Taller
                     query = $"SELECT * FROM aparato WHERE marca='{comboBox2.SelectedItem.ToString()}'";
                     break;
                 case "3":
-                    query = $"SELECT * FROM aparato WHERE entregado={filtroEstado}";
+                    query = $"SELECT * FROM aparato WHERE entregado='{filtroEstado}'";
                     break;
                 case "4":
                     idCliente = buscarIdCliente();
@@ -188,14 +188,14 @@ namespace Administracion_de_Taller
                     query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND marca='{comboBox2.SelectedItem.ToString()}'";
                     break;
                 case "13":
-                    query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND entregado={filtroEstado}";
+                    query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND entregado='{filtroEstado}'";
                     break;
                 case "14":
                     idCliente = buscarIdCliente();
                     query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND idCliente={idCliente}";
                     break;
                 case "23":
-                    query = $"SELECT * FROM aparato WHERE marca='{comboBox2.SelectedItem.ToString()}' AND entregado={filtroEstado}";
+                    query = $"SELECT * FROM aparato WHERE marca='{comboBox2.SelectedItem.ToString()}' AND entregado='{filtroEstado}'";
                     break;
                 case "24":
                     idCliente = buscarIdCliente();
@@ -206,7 +206,7 @@ namespace Administracion_de_Taller
                     query = $"SELECT * FROM aparato WHERE entregado='{filtroEstado}' AND idCliente={idCliente}";
                     break;
                 case "123":
-                    query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND marca='{comboBox2.SelectedItem.ToString()}' AND entregado={filtroEstado}";
+                    query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND marca='{comboBox2.SelectedItem.ToString()}' AND entregado='{filtroEstado}'";
                     break;
                 case "124":
                     idCliente = buscarIdCliente();
@@ -214,11 +214,11 @@ namespace Administracion_de_Taller
                     break;
                 case "134":
                     idCliente = buscarIdCliente();
-                    query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND entregado={filtroEstado} AND idCliente={idCliente}";
+                    query = $"SELECT * FROM aparato WHERE tipo='{comboBox1.SelectedItem.ToString()}' AND entregado='{filtroEstado}' AND idCliente={idCliente}";
                     break;
                 case "234":
                     idCliente = buscarIdCliente();
-                    query = $"SELECT * FROM aparato WHERE marca='{comboBox2.SelectedItem.ToString()}' AND entregado={filtroEstado} AND idCliente={idCliente}";
+                    query = $"SELECT * FROM aparato WHERE marca='{comboBox2.SelectedItem.ToString()}' AND entregado='{filtroEstado}' AND idCliente={idCliente}";
                     break;
                 default:
                     MessageBox.Show("No se hizo una combinación valida");
@@ -243,14 +243,6 @@ namespace Administracion_de_Taller
 
         private void comboBox4_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (comboBox4.SelectedItem.ToString().Equals("PENDIENTE"))
-            {
-                filtroEstado = 0;
-            }
-            if (comboBox4.SelectedItem.ToString().Equals("ENTREGADO"))
-            {
-                filtroEstado = 1;
-            }
             verificarFiltros();
         }
 
@@ -307,11 +299,20 @@ namespace Administracion_de_Taller
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
         {
             verificarFiltros();
+
         }
 
         private void comboBox3_SelectionChangeCommitted(object sender, EventArgs e)
         {
             verificarFiltros();
+            if (comboBox3.SelectedItem.ToString().Equals("PENDIENTE"))
+            {
+                filtroEstado = "PENDIENTE";
+            }
+            if (comboBox3.SelectedItem.ToString().Equals("DIAGNOSTICADO"))
+            {
+                filtroEstado = "DIAGNOSTICADO";
+            }
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

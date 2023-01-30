@@ -58,15 +58,23 @@ namespace Administracion_de_Taller
             labelControl.Text = this.validarControl(aparato.Control);
             labelModelo.Text = aparato.Modelo;
             labelIngreso.Text = aparato.FechaIngreso;
-            labelEstado.Text = this.validarEstado(aparato.Entregado);
+            labelEstado.Text = aparato.Entregado;
             pictureBox1.ImageLocation = aparato.LinkCloudinary;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
-            if (this.validarEstado(aparato.Entregado).Equals("Pendiente"))
+            if (aparato.Entregado.Equals("PENDIENTE"))
             {
                 button2.Enabled = true;
                 button2.Visible = true;
+            }
+            if (aparato.Entregado.Equals("DIAGNOSTICADO"))
+            {
+                button2.Enabled = false;
+                button2.Visible = false;
+
+                button5.Enabled = true;
+                button5.Visible = true;
             }
 
             if(aparato.LinkCloudinary != "")
@@ -94,23 +102,9 @@ namespace Administracion_de_Taller
             return "NO";
         }
 
-        private string validarEstado(int estado)
-        {
-            if(estado == 1)
-            {
-                return "Entregado";
-            }
-            if(estado == 2)
-            {
-                return "Diagnosticado";
-            }
-            return "Pendiente";
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            Owner.Show();  //Show the previous form
-            Close();
+            openChildForm(new FormAparatos());
         }
 
         private void button3_Click(object sender, EventArgs e)
