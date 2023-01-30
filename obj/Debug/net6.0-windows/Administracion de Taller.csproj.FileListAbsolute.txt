@@ -66,3 +66,4 @@ C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\Sy
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\System.Web.WebPages.Razor.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\System.Web.WebPages.dll
 C:\Users\jorge\source\repos\Administracion de Taller\bin\Debug\net6.0-windows\Microsoft.Web.Infrastructure.dll
+C:\Users\jorge\source\repos\Administracion de Taller\obj\Debug\net6.0-windows\Administracion_de_Taller.FormDiagnosticos.resources

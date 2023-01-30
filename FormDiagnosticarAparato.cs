@@ -85,6 +85,7 @@ namespace Administracion_de_Taller
         {
             Diagnostico diagnostico = new Diagnostico(richTextBox1.Text, Int32.Parse(textBox7.Text), DateTime.Now, aparatoForm.Id, clienteForm.Id);
             operacionesBdDiagnostico.insertarDiagnostico(diagnostico);
+            operacionesBdAparato.actualizarEstadoAparato(aparatoForm.Id, "DIAGNOSTICADO");
 
             MessageBox.Show("El diagnostico ha sido asignado correctamente.");
 

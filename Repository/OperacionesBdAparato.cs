@@ -61,7 +61,7 @@ namespace Administracion_de_Taller.Repository
                         aparato.FechaIngreso = reader.GetString(7);
                         aparato.FechaDiagnostico = (reader.IsDBNull(8)) ? "" : reader.GetString(7);
                         aparato.FechaEntrega = (reader.IsDBNull(9)) ? "" : reader.GetString(8);
-                        aparato.Entregado= int.Parse(reader.GetString(10));
+                        aparato.Entregado= reader.GetString(10);
                         aparato.LinkCloudinary = reader.GetString(11);
                     }
                 }
@@ -149,6 +149,28 @@ namespace Administracion_de_Taller.Repository
                 MessageBox.Show(ex.Message);
             }
             return aparatos;
+        }
+
+        public bool actualizarEstadoAparato(int aparatoId, String estado)
+        {
+            Conexion conexionBd = new Models.Conexion();
+            MySqlConnection conexion = conexionBd.establecerConexion();
+
+            string query = $"UPDATE aparato SET entregado='{estado}', fechaDiagnostico=CURRENT_DATE() WHERE id={aparatoId}";
+
+            try
+            {
+                MySqlCommand dbcmd = conexion.CreateCommand();
+                dbcmd.CommandText = query;
+                dbcmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return true;
         }
     }
 }

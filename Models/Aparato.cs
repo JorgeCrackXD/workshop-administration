@@ -18,11 +18,11 @@ namespace Administracion_de_Taller.Models
         private string fechaIngreso;
         private string fechaDiagnostico;
         private string fechaEntrega;
-        private int entregado;
+        private string entregado;
         private string linkCloudinary;
         private int idCliente;
 
-        public Aparato(int id, string tipo, string marca, string modelo, int control, int cable, string problema, string fechaIngreso, string fechaDiagnostico, string fechaEntrega, int entregado, string linkCloudinary, int idCliente)
+        public Aparato(int id, string tipo, string marca, string modelo, int control, int cable, string problema, string fechaIngreso, string fechaDiagnostico, string fechaEntrega, string entregado, string linkCloudinary, int idCliente)
         {
             this.id = id;
             this.tipo = tipo;
@@ -44,7 +44,7 @@ namespace Administracion_de_Taller.Models
 
         }
 
-        public Aparato(string tipo, string marca, string modelo, int control, int cable, string problema, string fechaIngreso, int entregado, string linkCloudinary, int idCliente)
+        public Aparato(string tipo, string marca, string modelo, int control, int cable, string problema, string fechaIngreso, string entregado, string linkCloudinary, int idCliente)
         {
             this.tipo = tipo;
             this.marca = marca;
@@ -67,7 +67,7 @@ namespace Administracion_de_Taller.Models
         public string FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
         public string FechaDiagnostico { get => fechaDiagnostico; set => fechaDiagnostico = value; }
         public string FechaEntrega { get => fechaEntrega; set => fechaEntrega = value; }
-        public int Entregado { get => entregado; set => entregado = value; }
+        public string Entregado { get => entregado; set => entregado = value; }
         public string LinkCloudinary { get => linkCloudinary; set => linkCloudinary = value; }
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public string Problema { get => problema; set => problema = value; }

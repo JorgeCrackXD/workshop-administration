@@ -28,6 +28,9 @@
     <Compile Update="FormDiagnosticarAparato.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormDiagnosticos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormNuevaMarca.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -122,7 +122,7 @@ namespace Administracion_de_Taller
 
             }
             // Se crea el objeto del aparato
-            Aparato aparato = new Aparato(tipo, marca, textBox4.Text, this.control(), this.cable(), problema, DateTime.Now.ToString("yyyy/MM/dd"), 0, imagenAparato.LinkCloudinary, idCliente);
+            Aparato aparato = new Aparato(tipo, marca, textBox4.Text, this.control(), this.cable(), problema, DateTime.Now.ToString("yyyy/MM/dd"), "PENDIENTE", imagenAparato.LinkCloudinary, idCliente);
 
             try
             {
